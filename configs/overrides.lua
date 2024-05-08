@@ -9,6 +9,8 @@ M.treesitter = {
 		"python",
 		"r",
 		"latex",
+    "c",
+    "cpp",
 	},
 	indent = {
 		enable = true,
@@ -24,9 +26,20 @@ M.mason = {
 		"lua-language-server",
 		"stylua",
 
+    -- c/cpp stuff
+		"clangd",
+		"clang-format",
+
+		--python stuff
+		"python-lsp-server",
+		"autopep8",
+
 		--r stuff
 		"r-languageserver",
 
+		--latex
+		"ltex-ls",
+		"vale",
 	},
 }
 

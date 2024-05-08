@@ -1,0 +1,4 @@
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON) in CMakeLists.txt
+cmake -S . -G "Unix Makefiles" -B build
+--query-driver=PATH to compiler in clangd.CMD
+Use MSY2 to get mingw

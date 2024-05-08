@@ -10,6 +10,9 @@ require("conform").setup {
   formatters_by_ft = {
     lua = { "stylua" },
     r = { "rprettify" },
+    cpp = { "clang_format" },
+    c = { "clang_format" },
+    python = { "autopep8" },
   },
   format_on_save = {
     -- These options will be passed to conform.format()

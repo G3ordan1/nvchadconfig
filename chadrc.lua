@@ -8,8 +8,8 @@ local M = {}
 local highlights = require "highlights"
 
 M.ui = {
-  theme = "chadracula",
-  theme_toggle = { "chadracula", "one_light" },
+  theme = "flexoki",
+  theme_toggle = { "flexoki", "one_light" },
 
   hl_override = highlights.override,
   hl_add = highlights.add,

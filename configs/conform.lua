@@ -3,7 +3,7 @@ require("conform").setup {
     rprettify = {
       inherit = false,
       stdin = false,
-      command = "rprettify.cmd",
+      command = "/home/geordan/.bin/rprettify",
       args = { "$FILENAME" },
     },
   },

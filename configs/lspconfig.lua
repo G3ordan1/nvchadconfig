@@ -1,10 +1,10 @@
--- EXAMPLE 
+-- EXAMPLE
 local on_attach = require("nvchad.configs.lspconfig").on_attach
 local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
-local servers = { "r_language_server", "pylsp", "clangd", "ltex", "texlab" }
+local servers = { "r_language_server", "pylsp", "clangd", "ltex", "texlab", "sqls" }
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
@@ -16,11 +16,11 @@ for _, lsp in ipairs(servers) do
 end
 
 lspconfig.pylsp.setup {
-on_attach = on_attach,
-on_init = on_init,
-settings = {
+  on_attach = on_attach,
+  on_init = on_init,
+  settings = {
     pylsp = {
-    plugins = {
+      plugins = {
         -- formatter options
         black = { enabled = true },
         autopep8 = { enabled = false },
@@ -35,12 +35,27 @@ settings = {
         jedi_completion = { fuzzy = true },
         -- import sorting
         pyls_isort = { enabled = true },
+      },
     },
-    },
-},
-flags = {
+  },
+  flags = {
     debounce_text_changes = 200,
-},
-capabilities = capabilities,
+  },
+  capabilities = capabilities,
 }
 
+lspconfig.sqls.setup {
+  on_attach = function(client, bufnr)
+    require("sqls").on_attach(client, bufnr) -- require sqls.nvim
+  end,
+  settings = {
+    sqls = {
+      connections = {
+        {
+          driver = "mysql",
+          dataSourceName = "geordan@tcp(127.0.0.1:3306)/giraffe",
+        },
+      },
+    },
+  },
+}

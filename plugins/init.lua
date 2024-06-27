@@ -3,33 +3,33 @@ local overrides = require "configs.overrides"
 return {
 
   {
-		"rcarriga/nvim-dap-ui",
-		event = "VeryLazy",
-		dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
-		config = function()
-			local dap = require("dap")
-			local dapui = require("dapui")
-			dapui.setup()
-			dap.listeners.after.event_initialized["dapui_config"] = function()
-				dapui.open()
-			end
-			dap.listeners.before.event_terminated["dapui_config"] = function()
-				dapui.close()
-			end
-			dap.listeners.before.event_exited["dapui_config"] = function()
-				dapui.close()
-			end
-		end,
-	},
+    "rcarriga/nvim-dap-ui",
+    event = "VeryLazy",
+    dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
+    config = function()
+      local dap = require "dap"
+      local dapui = require "dapui"
+      dapui.setup()
+      dap.listeners.after.event_initialized["dapui_config"] = function()
+        dapui.open()
+      end
+      dap.listeners.before.event_terminated["dapui_config"] = function()
+        dapui.close()
+      end
+      dap.listeners.before.event_exited["dapui_config"] = function()
+        dapui.close()
+      end
+    end,
+  },
 
-	{
-		"mfussenegger/nvim-dap",
-		event = "VeryLazy",
-		config = function()
-			-- require("nvchad.core.utils").load_mappings("dap")
-			require("configs.dap")
-		end,
-	},
+  {
+    "mfussenegger/nvim-dap",
+    event = "VeryLazy",
+    config = function()
+      -- require("nvchad.core.utils").load_mappings("dap")
+      require "configs.dap"
+    end,
+  },
 
   {
     "stevearc/conform.nvim",
@@ -49,8 +49,8 @@ return {
   },
   --
   {
-  	"williamboman/mason.nvim",
-  	opts = overrides.mason
+    "williamboman/mason.nvim",
+    opts = overrides.mason,
   },
 
   {
@@ -76,6 +76,10 @@ return {
     "devOpifex/r.nvim",
   },
 
+  {
+    "nanotee/sqls.nvim",
+    event = "VeryLazy",
+  },
   --
   -- {
   -- 	"nvim-treesitter/nvim-treesitter",

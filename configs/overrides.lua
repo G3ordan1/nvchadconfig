@@ -11,6 +11,7 @@ M.treesitter = {
 		"latex",
     "c",
     "cpp",
+    "sql"
 	},
 	indent = {
 		enable = true,
@@ -40,6 +41,8 @@ M.mason = {
 		--latex
 		"ltex-ls",
 		"vale",
+
+    "sqls",
 	},
 }
 

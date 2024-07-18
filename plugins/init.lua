@@ -76,6 +76,11 @@ return {
     "devOpifex/r.nvim",
   },
 
+  {
+    "nanotee/sqls.nvim",
+		 event = "VeryLazy",
+  }
+
   --
   -- {
   -- 	"nvim-treesitter/nvim-treesitter",

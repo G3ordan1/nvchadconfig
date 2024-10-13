@@ -8,7 +8,6 @@ M.treesitter = {
     "markdown_inline",
     "python",
     "r",
-    "latex",
     "c",
     "cpp",
     "sql",
@@ -39,8 +38,7 @@ M.mason = {
     "r-languageserver",
 
     --latex
-    "ltex-ls",
-    "vale",
+    "texlab",
 
     --sql
     "sqls",

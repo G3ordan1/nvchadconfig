@@ -34,9 +34,6 @@ M.mason = {
     "python-lsp-server",
     "autopep8",
 
-    --r stuff
-    "r-languageserver",
-
     --latex
     "texlab",
 

@@ -38,7 +38,7 @@ M.mason = {
     "texlab",
 
     --sql
-    "sqls",
+    -- "sqls",
   },
 }
 
